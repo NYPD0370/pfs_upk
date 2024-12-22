@@ -78,7 +78,7 @@ bool unpack(const std::string& path) {
     arc.read((char *)&path_length, sizeof(uint32_t));
 
     // get path
-    char *buf = new char[MAX_PATH];
+    char *buf = new char[32767];
     arc.read(buf, path_length); // NOTICE: it's UTF-8 string.
     buf[path_length] = 0x00;    // cut off string with 0x00
     entry.path = buf;
@@ -100,7 +100,8 @@ bool unpack(const std::string& path) {
   filesystem::path stem = pfspath.stem(); // foobar
   pfspath = pfspath.parent_path();        // /foo/bar/
   filesystem::path new_fs_prefix =
-      pfspath / stem / ""; // extract to /foo/bar/foobar/<VFS_PATH>
+    pfspath / stem.stem() / ""; // extract to /foo/bar/foobar/<VFS_PATH>
+  // prevent xxx.pfs.yyy to /xxx.pfs instead /xxx
 #ifdef DEBUG
   cout << "FIles will oupput to: " << new_fs_prefix << endl;
 #endif // DEBUG

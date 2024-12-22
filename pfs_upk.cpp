@@ -36,7 +36,8 @@ int main(int argc, char *argv[]) {
       cout << "Artemis C++ Packer ---- A Simple C++ Artemis Engine Archive "
               "Packer / Unpacker."
            << endl;
-      cout << "Copyright 2022-present @ryank231231." << endl;
+      cout << "Copyright 2022-Present @ryank231231." << endl;
+      cout << "Edited by @NYPD0370." << endl;
       cout << "Usage:" << endl;
       cout << argv[0] << " "
            << "<ARTEMIS ARCHIVE> / <FOLDER>" << endl;

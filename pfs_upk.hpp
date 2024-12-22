@@ -25,7 +25,6 @@ pfs_upk. If not, see <https://www.gnu.org/licenses/>.
 
 #ifndef _WIN32
 typedef char BYTE;
-#define MAX_PATH 260
 #endif // !_WIN32
 
 const char ARCHIVE_MAGIC[] = {0x70, 0x66};
